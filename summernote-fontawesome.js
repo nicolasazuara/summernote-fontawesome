@@ -11,7 +11,7 @@
     $.extend($.summernote.plugins, {
         'summernote-fontawesome': function (context) {
             var self = this;
-            self.$toolbar = context.layoutInfo.toolbar;
+            self.$editor = context.layoutInfo.editor;
 
             var icons = {
                 'note-icon-align': 'fas fa-align-left',
@@ -24,6 +24,7 @@
                 'note-icon-arrows-alt': 'fas fa-expand-arrows-alt',
                 'note-icon-bold': 'fas fa-bold',
                 'note-icon-caret': 'fas fa-caret-down',
+                'note-icon-chain-broken': 'fas fa-unlink',
                 'note-icon-circle': 'fas fa-circle',
                 'note-icon-close': 'fas fa-times',
                 'note-icon-code': 'fas fa-code',
@@ -39,6 +40,7 @@
                 'note-icon-picture': 'fas fa-image',
                 'note-icon-question': 'fas fa-question',
                 'note-icon-redo': 'fas fa-redo',
+                'note-icon-rollback': 'fas fa-sync',
                 'note-icon-square': 'fas fa-square',
                 'note-icon-strikethrough': 'fa-strikethrough',
                 'note-icon-subscript': 'fas fa-subscript',
@@ -50,12 +52,11 @@
                 'note-icon-undo': 'fas fa-undo',
                 'note-icon-unorderedlist': 'fas fa-list-ul',
                 'note-icon-video': 'fas fa-video',
-
             }
 
             this.initialize = function() {
                 $.each(icons, function(key, value) {
-                    self.$toolbar.find('i.' + key).removeClass(key).addClass('fa ' + value);
+                    self.$editor.find('i.' + key).removeClass(key).addClass('fa ' + value + ' fw');
                 });
             };
         }
