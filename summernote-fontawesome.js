@@ -56,7 +56,7 @@
 
             this.initialize = function() {
                 $.each(icons, function(key, value) {
-                    self.$editor.find('i.' + key).removeClass(key).addClass('fa ' + value + ' fw');
+                    self.$editor.find('i.' + key).removeClass(key).addClass('fa ' + value + ' fa-fw');
                 });
             };
         }
